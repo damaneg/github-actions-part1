@@ -1,24 +1,23 @@
 # Github Actions
-# Copyrigt (c) JP Record
+# Copyright (c) JP Record
 
 name: Github Actions Basics
 
 on:
- push:
-     - master
+  push:
+    - master
 
 jobs:
   my_testing:
     runs-on: ubuntu-latest 
 
     steps:
-    - name: Print Barior
-      run : echo "Hello from Testing job"
+      - name: Print Barior
+        run: echo "Hello from Testing job"
   
   my_deploy:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Print Barior
-      run : echo "Hello from Deploy job"
-      
+      - name: Print Barior
+        run: echo "Hello from Deploy job"
