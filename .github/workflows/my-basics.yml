@@ -5,7 +5,8 @@ name: Github Actions Basics
 
 on:
   push:
-    - master
+    branches:
+      - master
 
 jobs:
   my_testing:
@@ -21,3 +22,4 @@ jobs:
     steps:
       - name: Print Barior
         run: echo "Hello from Deploy job"
+
