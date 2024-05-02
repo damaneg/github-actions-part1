@@ -13,13 +13,13 @@ jobs:
     runs-on: ubuntu-latest 
 
     steps:
-      - name: Print Barior
+      - name: Print Barior in Testing
         run: echo "Hello from Testing job"
   
   my_deploy:
     runs-on: ubuntu-latest
-
+    needs: [my_testing]
     steps:
-      - name: Print Barior
+      - name: Print Barior in Deploy
         run: echo "Hello from Deploy job"
 
