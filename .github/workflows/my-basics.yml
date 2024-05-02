@@ -2,7 +2,9 @@
 # Copyright (c) JP Record
 
 name: Github Actions Basics
-
+env:
+  APPLICATION_NAME    : "MyFlask" 
+  DEPLOY_PACKAGE_NAME : "flask-deploy-ver-${{ github.sha }}"
 on:
   push:
     branches:
@@ -15,6 +17,12 @@ jobs:
     steps:
       - name: Print Barior in Testing
         run: echo "Hello from Testing job"
+
+      - name: Execute few commands
+        run: |
+          echo "Hello 1"
+          echo "Hello 2"
+          echo "Application name: ${{ env.APPLICATION_NAME }}"
   
   my_deploy:
     runs-on: ubuntu-latest
@@ -22,4 +30,6 @@ jobs:
     steps:
       - name: Print Barior in Deploy
         run: echo "Hello from Deploy job"
-
+        
+      - name: Printing Deployment package
+        run: echo "Deploy package name is ${{ env.DEPLOY_PACKAGE_NAME }}"
